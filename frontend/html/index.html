@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swarm Demo</title>
+  </head>
+  <body>
+    <h1>Backend Info:</h1>
+    <p id="info"></p>
+
+    <script>
+      fetch("/api")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("info").innerText = data;
+        })
+        .catch((error) => {
+          document.getElementById("info").innerText =
+            "Error fetching data: " + error;
+        });
+    </script>
+  </body>
+</html>
